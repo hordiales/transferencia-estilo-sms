@@ -11,7 +11,7 @@ Ver [INSTALL.md](INSTALL.md) para configurar las dependencias.
 
 # Usar
 
-    $ git clone [URL]
+    $ git clone https://github.com/hordiales/transferencia-estilo-sms
     $ cd transferencia-estilo-cnn
     $ juypter notebook
 
