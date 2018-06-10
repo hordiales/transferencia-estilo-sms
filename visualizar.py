@@ -12,24 +12,18 @@ import matplotlib.pyplot as plt
 import librosa
 import librosa.display
 
-
 #####################
 #numpy plot
 #####################
 
 def espectrograma(a_content, title, MAX_FREC_BINS=1000):
-    #MAX_FREC_BINS = 400
-
     plt.figure(figsize=(10,5))
     plt.subplot(1,2,1)
     plt.title(title)
-    # plt.title('Content')
     plt.imshow(a_content[:MAX_FREC_BINS,:], origin='lower')
     plt.show()
 #()
 def comparar_2_espectrogramas(a_content, a_style, MAX_FREC_BINS=1000):
-    #MAX_FREC_BINS = 400
-
     plt.figure(figsize=(10,5))
     plt.subplot(1,2,1)
     plt.title('Contenido')
@@ -42,8 +36,6 @@ def comparar_2_espectrogramas(a_content, a_style, MAX_FREC_BINS=1000):
 #()
 
 def comparar_3_espectrogramas(a_content, a_style, a, MAX_FREC_BINS=1000):
-    #MAX_FREC_BINS = 400
-
     plt.figure(figsize=(15,5))
     plt.subplot(1,3,1)
     # plt.title('Content') #TODO: internacionalizar
@@ -60,15 +52,11 @@ def comparar_3_espectrogramas(a_content, a_style, a, MAX_FREC_BINS=1000):
     plt.show()
 #()
 
-
 ##################
 # librosa dependecy
 #################
 
 def espectrograma_grande(filename, title):
-# TODO: ver esto para mostrar el espectro que recomiendan en esta web
-# https://musicinformationretrieval.com/ipython_audio.html
-# https://librosa.github.io/librosa/generated/librosa.display.specshow.html
     x, sr = librosa.load(filename)
     X = librosa.stft(x)
     Xdb = librosa.amplitude_to_db(abs(X))
@@ -77,7 +65,6 @@ def espectrograma_grande(filename, title):
 
     librosa.display.specshow(Xdb, sr=sr, x_axis='time', y_axis='hz')
 #()
-
 
 def comparar_espectrogramas_grande(filename1, title1, filename2, title2):
     x, sr = librosa.load(filename1)
@@ -92,12 +79,10 @@ def comparar_espectrogramas_grande(filename1, title1, filename2, title2):
     plt.figure(figsize=(10, 5))
     plt.subplot(1, 2, 1)
     plt.title(title1)
-    #plt.imshow(X[:MAX_FREC_BINS,:], origin='lower')
     librosa.display.specshow(X_content_db, sr=sr, x_axis='time', y_axis='hz')
 
     plt.subplot(1, 2, 2)
     plt.title(title2)
-    #plt.imshow(a_style[:MAX_FREC_BINS,:], origin='lower')
     librosa.display.specshow(X_style_db, sr=sr, x_axis='time', y_axis='hz')
     plt.show()
 #()

@@ -33,19 +33,7 @@ Ver scripts/
 
 # Optimizaciones
 
-Aprovechar optimizaciones, recompilar TensorFlow para los flags específicos del CPU o GPU (si se cuenta con una CUDA compatible). Ver [INSTALL.md](INSTALL.md).
-
-## Limitar recursos de la máquina
-
-Info:
-
-    ulimit -a
-
-Ejemplos:
-
-    $ ulimit -v 8388608 #Virtual 8GB 
-    $ ulimit -m 8388608 #RAM 8GB
-    $ ulimit -l 32
+Ver [Optimizaciones.md](Optimizaciones.md).
 
 # License
 
