@@ -15,6 +15,7 @@ import sys, os
 import numpy as np
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath('__file__')), './sms-tools-lite/software/models/'))
 import sineModel as SM
+import librosa
 
 class SMS:
     """
