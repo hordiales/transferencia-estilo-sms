@@ -28,11 +28,24 @@ Librosa (v0.6.1): Para manejar lectura/escritura de audio y STFT (https://github
 Numpy: manejo de matrices, plot, etc.
 Jupyter Notebook: https://jupyter.org/install
 
+
+Nota: Si en Mac OsX hay problemas para instalar librosa (en realidad la dependencia sk-learn). Probar con python versión 3.6 (en lugar de 3.7 o superior). sudo port install python36
+
 ## Tensorflow (1.9 or nightly version)
 
-Última version (compilada por la noche):
+Versión 1.9.0:
+
+    $ sudo pip3 install tensorflow==1.9.0
+
+
+O última version (compilada por la noche)
 
     $ sudo pip3 install tf-nightly
+
+
+Si hay problemas con pip en Mac OsX:
+
+    $ python3 -m pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.12.0-py3-none-any.whl
 
 ### Optimización
 
@@ -55,7 +68,7 @@ Mac:
 Both:
 
     $ git clone https://github.com/hordiales/sms-tools-lite
-    $ cd software/models/utilFunctions_C
+    $ cd sms-tools-lite/software/models/utilFunctions_C
     $ python3 compileModule.py build_ext --inplace
 
 ### (optional) Essentia (http://essentia.upf.edu/)
@@ -79,3 +92,23 @@ To compile everything you’ve configured:
 To install the C++ library and the python bindings (if configured successfully; you might need to run this command with sudo):
 
     $ sudo ./waf install
+
+# PIP, virtualenv, etc
+
+Get pip:
+
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python get-pip.py
+
+
+Virtualenv:
+
+    sudo python3.6 -m pip install virtualenv
+    virtualenv style-transfer --python=python3.6
+    
+    source ./style-transfer/bin/activate
+
+
+Requeriments:
+
+     pip install -r requirements.txt 
