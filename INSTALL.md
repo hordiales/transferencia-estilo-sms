@@ -6,18 +6,21 @@ Python version >=3.1
 
 Linux:
 
-    $ sudo apt install ipython3 ipython3-notebook
+    $ sudo apt install python3 ffmpeg
 
 Mac:
 
     $ brew install python3
-    $ pip3 install ipython jupyter
+    $ pip3 install jupyter
+
+Backend para librosa: ffmpeg u otro
 
 Windows:
     Procedimiento similar
 
 
 ## Depencias generales
+
     $ pip install -r requirements.txt
 
 o
