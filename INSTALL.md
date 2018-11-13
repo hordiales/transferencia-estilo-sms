@@ -70,7 +70,7 @@ Mac:
 
 Both:
 
-    $ git clone https://github.com/hordiales/sms-tools-lite
+    $ git clone --depth=1 https://github.com/hordiales/sms-tools-lite
     $ cd sms-tools-lite/software/models/utilFunctions_C
     $ python3 compileModule.py build_ext --inplace
 
