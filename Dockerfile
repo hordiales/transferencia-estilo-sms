@@ -27,14 +27,14 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean
 
 # repo clone (source code)
-RUN git clone https://github.com/hordiales/transferencia-estilo-sms
+RUN git clone --depth=1 https://github.com/hordiales/transferencia-estilo-sms
 RUN sed -i "s/tensorflow>=1.9.0/tensorflow>=1.9.0rc2/g" transferencia-estilo-sms/requirements.txt
 WORKDIR /transferencia-estilo-sms
 # py dependencies
 RUN pip3 install -r requirements.txt
 
 # SMS Tools (lite version)
-RUN git clone https://github.com/hordiales/sms-tools-lite
+RUN git clone --depth=1 https://github.com/hordiales/sms-tools-lite
 RUN cd sms-tools-lite/software/models/utilFunctions_C && python3 compileModule.py build_ext --inplace
 
 # jupyter noteoobk
