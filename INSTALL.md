@@ -63,6 +63,7 @@ Original: https://github.com/MTG/sms-tools
 Ubuntu:
 
     $ sudo apt-get install python-dev ipython python-numpy python-matplotlib python-scipy cython
+    $ pip install --no-use-wheel --no-cache-dir Cython h5py #fix ubuntu 18.04
 
 Mac:
 
