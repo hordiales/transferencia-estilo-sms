@@ -3,7 +3,7 @@
 # Run container (edit mode, bash entrypoint): sudo docker run -p 8888:8888 --name style-transfer -it --net="host" --entrypoint /bin/bash cnn-style-transfer
 
 # Bash entrypoint + (--rm) to automatically remove the container when it exits.
-# sudo docker run -p 8888:8888 --name style -it --rm --net="host" -v $PWD/../extractos:/transferencia-estilo-sms/extractos cnn-style-transfer
+# docker run -p 8888:8888 --name style -it --rm --net="host" -v $PWD/../extractos:/transferencia-estilo-sms/extractos cnn-style-transfer
 
 
 FROM ubuntu:17.10
@@ -57,6 +57,9 @@ WORKDIR "/transferencia-estilo-sms"
 
 #tmp
 RUN apt-get install -y ffmpeg 
+
+# version conflict FIX (with jupyter)
+RUN pip3 install prompt-toolkit==1.0.15
 
 EXPOSE 8888
 
