@@ -2,6 +2,8 @@
 
 Este trabajo tiene como objetivo aplicar en archivos de audio las técnicas de procesamiento con redes neuronales desarrolladas para la transferencia de estilo en imágenes. En particular, aquellas que son de reciente publicación y dentro de su arquitectura utilizan una o más capas de redes neuronales convolucionales (CNN). Para ello, se construyen representaciones de la señal audible en matrices de estructura similar a las que normalmente se utilizan para procesar imagenes. Se evaluan diferentes aproximaciones al problema utlizando técnicas de análisis/síntesis como la transformada de tiempo corto de Fourier (STFT) y la descomposición de la señal de entrada en sinusoides y residuo, derivada del Spectral Modelling Synthesis (SMS), históricamente utilizado en señales de voz. Aunque la definición de estilo puede ser subjetiva, se ensayan algunas aproximaciones en su definición y reconocimiento. Para esto, se desarrollan e implementan diferentes programas en Python utilizando el framework TensorFlow, pensado para construir y entrenar redes neuronales. El resultado es un enfoque diferente para la aplicación de efectos digitales en señales de audio. 
 
+Ver demo online: [Demo: Tangos 'El Choclo' y 'Adios Nonino'](https://nbviewer.jupyter.org/github/hordiales/transferencia-estilo-sms/blob/master/Demo/Demo.ipynb).
+
 # Arquitectura CNN
 
 ![arq-cnn-sms](img/arq-cnn-sms.png)
