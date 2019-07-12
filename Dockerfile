@@ -6,9 +6,9 @@
 # docker run -p 8888:8888 --name style -it --rm --net="host" -v $PWD/../extractos:/transferencia-estilo-sms/extractos cnn-style-transfer
 
 
-FROM ubuntu:17.10
+FROM ubuntu:19.04
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install --fix-missing -y \
     build-essential \
     sed \
     sudo \
