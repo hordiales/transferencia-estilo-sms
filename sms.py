@@ -19,6 +19,7 @@ sys.path.append(os.path.join(os.path.dirname(os.path.realpath('__file__')), './t
 
 import sineModel as SM
 import librosa
+import soundfile as sf
 
 class SMS:
     """
@@ -68,7 +69,8 @@ def sms_synth_to_file(output_filename, tfreq, tmag, tphase, Fs):
         Returns y: a vector with audio 
     """
     y = np.asarray( SM.sineModelSynth(tfreq, tmag, tphase, SMS.Ns, SMS.H, Fs), dtype='float32' )
-    librosa.output.write_wav(output_filename, y, Fs)
+    #librosa.output.write_wav(output_filename, y, Fs)
+    sf.write(file=output_filename, data=y, samplerate=Fs)
     return y
 #sms_synth_from_file()
 
