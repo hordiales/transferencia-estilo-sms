@@ -13,9 +13,11 @@
 
 import sys, os
 import numpy as np
-sys.path.append(os.path.join(os.path.dirname(os.path.realpath('__file__')), './sms-tools-lite/software/models/'))
+# sys.path.append(os.path.join(os.path.dirname(os.path.realpath('__file__')), './sms-tools-lite/software/models/')) # 2018
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath('__file__')), './sms-tools/software/models/'))
 #FIXME
-sys.path.append(os.path.join(os.path.dirname(os.path.realpath('__file__')), './transferencia-estilo-sms/sms-tools-lite/software/models/'))
+# sys.path.append(os.path.join(os.path.dirname(os.path.realpath('__file__')), './transferencia-estilo-sms/sms-tools-lite/software/models/')) #2018
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath('__file__')), './transferencia-estilo-sms/sms-tools/software/models/'))
 
 import sineModel as SM
 import librosa

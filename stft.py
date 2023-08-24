@@ -33,7 +33,7 @@ def logmag_stft_from_file(filename, X_FRAMES=300, N_FFT=2048):
         returns S: [bin f, frame t], Fs (Frecuencia de sampleo del archivo)
     """
     x, fs = librosa.load(filename)
-    S = librosa.stft(x, N_FFT) 
+    S = librosa.stft(y=x, n_fft=N_FFT) 
     
     print("Frames: ", S.shape)
 

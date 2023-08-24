@@ -1,5 +1,6 @@
 extractos/*
-*.ipynb
+sms-tools*
+#*.ipynb
 *.wav
 *.mp3
 .ipynb_checkpoints/
