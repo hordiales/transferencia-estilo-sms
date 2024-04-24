@@ -64,6 +64,7 @@ def melspectrogram_from_file(filename):
     return S, fs
 #logmag_stft_from_file()
 
+
 def reconstruccion_fase_griffin_lim(result, a_content, N_FFT=2048):
     """
         Reconstrucción utilizando el algoritmo de Griffin Lim
@@ -74,10 +75,42 @@ def reconstruccion_fase_griffin_lim(result, a_content, N_FFT=2048):
     a = np.zeros_like(a_content)
 
     # Dimension adjust
-    N_CHANNELS = np.min( [a_content.shape[0], result.shape[3]] )
-    N_FRAMES = np.min( [a_content.shape[1], result.shape[2]] )
+    # N_CHANNELS = np.min( [a_content.shape[0], result.shape[3]] ) # imple TF1
+    N_CHANNELS = np.min( [a_content.shape[0], result.shape[0]] )
+    N_FRAMES = np.min( [a_content.shape[1], result.shape[1]] )
+   
+
+    # a[:N_CHANNELS,:N_FRAMES] = (np.exp(result[0,0].T) - 1)[:N_CHANNELS,:N_FRAMES] # imple TF1
+    a[:N_CHANNELS,:N_FRAMES] = (np.exp(result) - 1)[:N_CHANNELS,:N_FRAMES]
+    
+
+    p = 2 * np.pi * np.random.random_sample(a.shape) - np.pi
+
+    for i in range(ITERACIONES):
+        S = a * np.exp(1j*p)
+        x = librosa.istft(S)
+        p = np.angle(librosa.stft(x, n_fft=N_FFT))
+
+    return x
+
+
+def old_reconstruccion_fase_griffin_lim(result, a_content, N_FFT=2048):
+    """
+        (versión anterior, para TF1)
+        Reconstrucción utilizando el algoritmo de Griffin Lim
+
+        Nota: Es medio lento... Ver el tema de númerdo de iteraciones (500)
+    """
+    ITERACIONES = 500
+    a = np.zeros_like(a_content)
+
+    # Dimension adjust
+    # N_CHANNELS = np.min( [a_content.shape[0], result.shape[3]] ) # imple TF1
+    N_CHANNELS = np.min( [a_content.shape[0], result.shape[0]] )
+    N_FRAMES = np.min( [a_content.shape[1], result.shape[1]] )
     
     a[:N_CHANNELS,:N_FRAMES] = (np.exp(result[0,0].T) - 1)[:N_CHANNELS,:N_FRAMES]
+    # a[:N_CHANNELS,:N_FRAMES] = (np.exp(result[0,0].T) - 1)[:N_CHANNELS,:N_FRAMES]
 
     p = 2 * np.pi * np.random.random_sample(a.shape) - np.pi
 

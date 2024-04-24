@@ -34,7 +34,7 @@ Jupyter Notebook: https://jupyter.org/install
 
 Nota: Si en Mac OsX hay problemas para instalar librosa (en realidad la dependencia sk-learn). Probar con python versión 3.6 (en lugar de 3.7 o superior). sudo port install python36
 
-## Tensorflow (1.9 or nightly version)
+## (old version) Tensorflow (1.9 or nightly version)
 
 Versión 1.9.0:
 
